@@ -597,6 +597,86 @@
             transform: translateY(-3px);
         }
 
+        /* Payment Form */
+        #paymentForm {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 10000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .payment-container {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            border: 1px solid var(--border-color);
+        }
+
+        .payment-container h3 {
+            margin-bottom: 20px;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        .payment-container label {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--text-muted);
+        }
+
+        .payment-container input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-dark);
+            color: var(--text-light);
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+
+        .payment-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .payment-buttons button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cancel-btn {
+            background: var(--border-color);
+            color: var(--text-light);
+        }
+
+        .cancel-btn:hover {
+            background: #333344;
+        }
+
+        .pay-btn {
+            background: var(--primary);
+            color: var(--bg-darker);
+        }
+
+        .pay-btn:hover {
+            background: var(--primary-dark);
+        }
+
         /* Responsive */
         @media (max-width: 992px) {
             .hero h1 {
@@ -740,7 +820,7 @@
                 </iframe>
             </div>
             
-            <button class="cta-button" onclick="payWithPaystack()">Get Lifetime Access for $50 <span class="original-price">$100</span></button>
+            <button class="cta-button" onclick="payWithPaystack()">Get Lifetime Access for ₦70,000 <span class="original-price">₦100,000</span></button>
             <p class="price">30-Day Money-Back Guarantee</p>
         </div>
     </section>
@@ -764,6 +844,37 @@
                     <i class="fas fa-money-bill-wave"></i>
                     <h3>Passive Income</h3>
                     <p>Earn from multiple platforms while you sleep with minimal effort after setup.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Timer -->
+    <section class="section" id="pricing">
+        <div class="container">
+            <div class="countdown">
+                <div class="countdown-content">
+                    <h3>Price increases to ₦100,000 in:</h3>
+                    <div class="timer" id="countdown">
+                        <div class="timer-segment">
+                            <div class="timer-number" id="days">00</div>
+                            <div class="timer-label">Days</div>
+                        </div>
+                        <div class="timer-segment">
+                            <div class="timer-number" id="hours">00</div>
+                            <div class="timer-label">Hours</div>
+                        </div>
+                        <div class="timer-segment">
+                            <div class="timer-number" id="minutes">00</div>
+                            <div class="timer-label">Minutes</div>
+                        </div>
+                        <div class="timer-segment">
+                            <div class="timer-number" id="seconds">00</div>
+                            <div class="timer-label">Seconds</div>
+                        </div>
+                    </div>
+                    <p>Bonus: Free 'Viral Hook Generator' cheat sheet (first 10 students)</p>
+                    <button class="cta-button" onclick="payWithPaystack()" style="margin-top: 30px;">Get Instant Access for ₦70,000</button>
                 </div>
             </div>
         </div>
@@ -835,37 +946,6 @@
         </div>
     </section>
 
-    <!-- Countdown Timer -->
-    <section class="section" id="pricing">
-        <div class="container">
-            <div class="countdown">
-                <div class="countdown-content">
-                    <h3>Price increases to $100 in:</h3>
-                    <div class="timer" id="countdown">
-                        <div class="timer-segment">
-                            <div class="timer-number" id="days">00</div>
-                            <div class="timer-label">Days</div>
-                        </div>
-                        <div class="timer-segment">
-                            <div class="timer-number" id="hours">00</div>
-                            <div class="timer-label">Hours</div>
-                        </div>
-                        <div class="timer-segment">
-                            <div class="timer-number" id="minutes">00</div>
-                            <div class="timer-label">Minutes</div>
-                        </div>
-                        <div class="timer-segment">
-                            <div class="timer-number" id="seconds">00</div>
-                            <div class="timer-label">Seconds</div>
-                        </div>
-                    </div>
-                    <p>Bonus: Free 'Viral Hook Generator' cheat sheet (first 10 students)</p>
-                    <button class="cta-button" onclick="payWithPaystack()" style="margin-top: 30px;">Get Instant Access for $50</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- FAQ Section -->
     <section class="section" id="faq">
         <div class="container">
@@ -917,7 +997,7 @@
             <div style="text-align: center; padding: 60px 20px; background-color: var(--card-bg); border-radius: 12px; border: 1px solid var(--border-color);">
                 <h2 style="font-size: 2rem; margin-bottom: 20px; color: var(--primary);">Ready to Automate Your Reel Creation?</h2>
                 <p style="font-size: 1.1rem; margin-bottom: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">Join now and start generating dozens of viral reels from your long videos with zero manual work.</p>
-                <button class="cta-button" onclick="payWithPaystack()">Get Lifetime Access for $50 <span class="original-price">$100</span></button>
+                <button class="cta-button" onclick="payWithPaystack()">Get Lifetime Access for ₦70,000 <span class="original-price">₦100,000</span></button>
                 <p style="margin-top: 20px; color: var(--text-muted);">30-Day Money-Back Guarantee</p>
             </div>
         </div>
@@ -946,6 +1026,25 @@
         <i class="fas fa-arrow-up"></i>
     </div>
 
+    <!-- Payment Form -->
+    <div id="paymentForm">
+        <div class="payment-container">
+            <h3>Complete Your Purchase</h3>
+            <form id="paystackForm">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required placeholder="Enter your email">
+                
+                <label for="name">Full Name</label>
+                <input type="text" id="name" required placeholder="Enter your full name">
+                
+                <div class="payment-buttons">
+                    <button type="button" class="cancel-btn" onclick="document.getElementById('paymentForm').style.display = 'none'">Cancel</button>
+                    <button type="submit" class="pay-btn">Pay ₦70,000</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <script>
         // Mobile Menu Toggle
         const hamburger = document.getElementById('hamburger');
@@ -963,7 +1062,7 @@
             hamburger.innerHTML = '<i class="fas fa-bars"></i>';
         }
 
-        // Countdown Timer (Fixed)
+        // Countdown Timer
         function updateCountdown() {
             // Set the end date (5 days from now)
             const endDate = new Date();
@@ -1008,22 +1107,55 @@
         
         // Paystack Payment
         function payWithPaystack() {
+            // Show the payment form
+            document.getElementById('paymentForm').style.display = 'flex';
+        }
+
+        // Form submission handler
+        document.getElementById('paystackForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const name = document.getElementById('name').value;
+            
+            if (!email || !name) {
+                alert('Please fill in all fields');
+                return;
+            }
+
             const handler = PaystackPop.setup({
-                key: 'pk_live_bab837f46c02f8acfd170f322780645bd132f5fe',
-                email: 'customer@email.com', // You should collect this from a form
-                amount: 5000 * 100, // $50 in kobo
-                currency: 'USD',
-                ref: '' + Math.floor((Math.random() * 1000000000) + 1),
+                key: 'pk_live_bab837f46c02f8acfd170f322780645bd132f5fe', // your public key
+                email: email,
+                amount: 7000000, // ₦70,000 in kobo (70,000 * 100)
+                currency: 'NGN', // Changed to Naira
+                ref: 'AISCGC_' + Math.floor((Math.random() * 1000000000) + 1), // unique reference
+                metadata: {
+                    custom_fields: [
+                        {
+                            display_name: "Customer Name",
+                            variable_name: "customer_name",
+                            value: name
+                        }
+                    ]
+                },
                 callback: function(response) {
-                    alert('Payment complete! You will receive course access via email.');
-                    // In production, redirect to thank you page or send access
+                    // On successful payment
+                    document.getElementById('paymentForm').style.display = 'none';
+                    
+                    // Show success message (in production, you would verify on your server first)
+                    alert('Payment successful! You will receive course access via email.');
+                    
+                    // In production, you would redirect to a thank you page:
+                    // window.location.href = '/thank-you?reference=' + response.reference;
                 },
                 onClose: function() {
-                    alert('Payment window closed.');
+                    // When user closes the payment modal
+                    alert('Payment window closed. You can try again.');
                 }
             });
+            
             handler.openIframe();
-        }
+        });
 
         // Back to Top Button
         const backToTop = document.getElementById('backToTop');
